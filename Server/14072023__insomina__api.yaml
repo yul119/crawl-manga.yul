@@ -1,0 +1,217 @@
+_type: export
+__export_format: 4
+__export_date: 2023-07-14T02:56:44.230Z
+__export_source: insomnia.desktop.app:v2023.4.0
+resources:
+  - _id: req_cdcdae0879fb4eaea0d018e694748623
+    parentId: fld_00fdc2f6f4de477dbd8cb27759faac17
+    modified: 1689303349349
+    created: 1689158149802
+    url: "{{ _.host }}/search"
+    name: search
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters:
+      - id: pair_f393b343d6d64cb1a56016105333a1e8
+        name: keyword
+        value: lãng khách
+        description: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1689158149802
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_00fdc2f6f4de477dbd8cb27759faac17
+    parentId: wrk_f8ea3bfed18d4be1b891741a9e045dee
+    modified: 1689303340917
+    created: 1689303340917
+    name: steal manga
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1689303340917
+    _type: request_group
+  - _id: wrk_f8ea3bfed18d4be1b891741a9e045dee
+    parentId: null
+    modified: 1688612244139
+    created: 1688612244139
+    name: vela-starwars
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_7586345af7664a789c1be55f3ee177c4
+    parentId: fld_00fdc2f6f4de477dbd8cb27759faac17
+    modified: 1689303352878
+    created: 1689179251306
+    url: "{{ _.host }}/count"
+    name: count
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"url": "https://nettruyenco.vn/truyen-tranh/lang-khach-4970"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1689158149752
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_580f2739769742b1a7f741d3678a5bce
+    parentId: fld_00fdc2f6f4de477dbd8cb27759faac17
+    modified: 1689303354814
+    created: 1689213369226
+    url: "{{ _.host }}/chapter"
+    name: chapter
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"url": "https://nettruyenco.vn/truyen-tranh/lang-khach-4970"
+        }
+    parameters:
+      - id: pair_808cd6f3a2c9446dbf7b5cc4a357cbd5
+        name: from
+        value: "2"
+        description: ""
+      - id: pair_a22e08f0d182442eb869446937c0fce5
+        name: to
+        value: "2"
+        description: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+      - id: pair_f07f52e6a9024f06902d162d15c55d39
+        name: ""
+        value: ""
+        description: ""
+    authentication: {}
+    metaSortKey: -1689158149702
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ab4332ada7bc41b1a732a6ab6eb98703
+    parentId: fld_00fdc2f6f4de477dbd8cb27759faac17
+    modified: 1689303357039
+    created: 1689299949453
+    url: "{{ _.host }}/save-pdf"
+    name: save-pdf
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_714b6ce98d1145b3a7de6c4f92ed071c
+        name: name
+        value: vegabond__2
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1689158149652
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5b0d376e77c24d3391bf312f724f9a04
+    parentId: fld_00fdc2f6f4de477dbd8cb27759faac17
+    modified: 1689303359458
+    created: 1689300082450
+    url: "{{ _.host }}/pdf"
+    name: pdf
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_714b6ce98d1145b3a7de6c4f92ed071c
+        name: name
+        value: hihi
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1689158149602
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_b85c0314c5f87cd015273881a0995aa00cf09412
+    parentId: wrk_f8ea3bfed18d4be1b891741a9e045dee
+    modified: 1689051005145
+    created: 1688612244142
+    name: Base Environment
+    data:
+      host: http://0.0.0.0:3000
+    dataPropertyOrder:
+      "&":
+        - host
+    color: null
+    isPrivate: false
+    metaSortKey: 1688612244142
+    _type: environment
+  - _id: jar_b85c0314c5f87cd015273881a0995aa00cf09412
+    parentId: wrk_f8ea3bfed18d4be1b891741a9e045dee
+    modified: 1689063430713
+    created: 1688612244143
+    name: Default Jar
+    cookies:
+      - key: connect.sid
+        value: s%3AyFmZMcINdx6JxzclU1gJZhkk2Lqi7zdw.tr1eGes%2FLDa7LjNFI9ipKF03P4Oy87zWZ8mX142D%2BKI
+        domain: dev.api-starwars.gobizdev.com
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2023-07-06T02:59:07.966Z
+        lastAccessed: 2023-07-11T08:17:10.712Z
+        id: "7118729242363013"
+      - key: connect.sid
+        value: s%3AZJcJCBNSq2f21SDZuLpUjfcJQFfHd2Dt.Rt9MWN07zQLbFhAUtQDybxWhRTJ4tyvMr%2FktOakSS8M
+        domain: 0.0.0.0
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2023-07-06T02:59:22.087Z
+        lastAccessed: 2023-07-10T08:11:52.291Z
+        id: "7803660665499743"
+    _type: cookie_jar
+  - _id: spc_796e26ef2bee48ef9f718a8530646762
+    parentId: wrk_f8ea3bfed18d4be1b891741a9e045dee
+    modified: 1688612244140
+    created: 1688612244140
+    fileName: vela-starwars
+    contents: ""
+    contentType: yaml
+    _type: api_spec
