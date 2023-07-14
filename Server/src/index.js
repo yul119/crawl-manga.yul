@@ -13,11 +13,9 @@ app.get('/count', (req,res) => {
 app.get('/chapter', (req,res) => {
     crawlDataService.getChapter(req, res)
 })
-
 app.get('/save-pdf', (req,res) => {
-    crawlDataService.savePDF(req, res)
+    crawlDataService.savePDF(req,res)
 })
-
 app.get('/pdf', (req,res) => {
     crawlDataService.getPDF(req, res)
 })

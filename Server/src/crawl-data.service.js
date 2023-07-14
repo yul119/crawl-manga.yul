@@ -110,7 +110,7 @@ const crawlDataService = {
 
      savePDF: (req,res) => {
           const doc = new PDFDocument()
-          doc.pipe(fs.createWriteStream(`${req.query.name}.pdf`));
+          doc.pipe(fs.createWriteStream(`${req.query?.name}.pdf`));
 
           const directory = 'images'
           const files = fs.readdirSync(directory).sort((a,b) => a.localeCompare(b, undefined, {
@@ -123,21 +123,31 @@ const crawlDataService = {
                    align: 'center'
               }
           );
+
+
           for (let i =1; i < files.length; i++) {
-               doc.addPage()
-               .image(`${directory}/${files[i]}`, {
-                   fit: [500, 680],
-                   align: 'center',
-                   valign: 'center'
-              });
+               try {
+                    const images = fs.readFileSync(`${directory}/${files[i]}`)
+                    if(images){
+                         doc.addPage()
+                             .image(`${directory}/${files[i]}`, {
+                                  fit: [500, 680],
+                                  align: 'center',
+                                  valign: 'center'
+                             });
+                    }
+               } catch (err) {
+                    console.error(err)
+               }
           }
 
           doc.end()
-          res.send('done')
+
+          res.send('Done.')
      },
 
      getPDF: async (req,res) => {
-          const data = fs.readFileSync(`${req.query?.name}`);
+          const data = fs.readFileSync(`${req.query?.name}.pdf`);
           res.contentType("application/pdf");
           res.send(data);
      }
