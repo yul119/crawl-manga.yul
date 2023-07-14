@@ -147,9 +147,7 @@ const crawlDataService = {
      },
 
      getPDF: async (req,res) => {
-          const data = fs.readFileSync(`${req.query?.name}.pdf`);
-          res.contentType("application/pdf");
-          res.send(data);
+          res.download(`${req.query?.name}.pdf`)
      }
 }
 
